@@ -1,34 +1,54 @@
-# Coffee Shop Backend
+# Auth Cafe
+Full-stack Ionic & Flask-RESTful webapp powering managers, baristas, and guests in a digitally enabled cafe! 
 
 ## Getting Started
 
-### Installing Dependencies
-
-#### Python 3.7
-
-Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
-
-#### Virtual Enviornment
-
-We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
-
-#### PIP Dependencies
-
-Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
-
-```bash
-pip install -r requirements.txt
+### Backend Core Dependencies
+#### Install core dependencies
 ```
-
-This will install all of the required packages we selected within the `requirements.txt` file.
-
-##### Key Dependencies
-
-- [Flask](http://flask.pocoo.org/)  is a lightweight backend microservices framework. Flask is required to handle requests and responses.
-
-- [SQLAlchemy](https://www.sqlalchemy.org/) and [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) are libraries to handle the lightweight sqlite database. Since we want you to focus on auth, we handle the heavy lift for you in `./src/database/models.py`. We recommend skimming this code first so you know how to interface with the Drink model.
-
-- [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
+$ pipenv install flask-restful
+$ pipenv install flask-cors
+$ pipenv install flask-sqlalchemy
+$ pipenv install python-jose-cryptodome
+```
+#### Currently-installed core dependency graph information.
+```
+$ pipenv graph 
+```
+```
+Flask-Cors==3.0.8
+  - Flask [required: >=0.9, installed: 1.1.1]
+    - click [required: >=5.1, installed: 7.0]
+    - itsdangerous [required: >=0.24, installed: 1.1.0]
+    - Jinja2 [required: >=2.10.1, installed: 2.10.3]
+      - MarkupSafe [required: >=0.23, installed: 1.1.1]
+    - Werkzeug [required: >=0.15, installed: 0.16.0]
+  - Six [required: Any, installed: 1.13.0]
+Flask-RESTful==0.3.7
+  - aniso8601 [required: >=0.82, installed: 8.0.0]
+  - Flask [required: >=0.8, installed: 1.1.1]
+    - click [required: >=5.1, installed: 7.0]
+    - itsdangerous [required: >=0.24, installed: 1.1.0]
+    - Jinja2 [required: >=2.10.1, installed: 2.10.3]
+      - MarkupSafe [required: >=0.23, installed: 1.1.1]
+    - Werkzeug [required: >=0.15, installed: 0.16.0]
+  - pytz [required: Any, installed: 2019.3]
+  - six [required: >=1.3.0, installed: 1.13.0]
+Flask-SQLAlchemy==2.4.1
+  - Flask [required: >=0.10, installed: 1.1.1]
+    - click [required: >=5.1, installed: 7.0]
+    - itsdangerous [required: >=0.24, installed: 1.1.0]
+    - Jinja2 [required: >=2.10.1, installed: 2.10.3]
+      - MarkupSafe [required: >=0.23, installed: 1.1.1]
+    - Werkzeug [required: >=0.15, installed: 0.16.0]
+  - SQLAlchemy [required: >=0.8.0, installed: 1.3.11]
+python-jose-cryptodome==1.3.2
+  - ecdsa [required: <1.0, installed: 0.14.1]
+    - six [required: Any, installed: 1.13.0]
+  - future [required: <1.0, installed: 0.18.2]
+  - pycryptodome [required: >=3.3.1,<3.4.0, installed: 3.3.1]
+  - six [required: <2.0, installed: 1.13.0]
+```
 
 ## Running the server
 
