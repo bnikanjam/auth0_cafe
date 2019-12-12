@@ -3,7 +3,6 @@ from jose import jwt
 from urllib.request import urlopen
 from os import environ as env
 
-
 AUTH0_DOMAIN = env.get('AUTH0_DOMAIN')
 AUTH0_CLIENT_ID = env.get('AUTH0_CLIENT_ID')
 API_AUDIENCE = env.get('API_IDENTIFIER')
@@ -17,6 +16,7 @@ token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9VTXpPVE00TURFNFJUQkVNalk
 class AuthError(Exception):
     """ AuthError Exception: A standardized way to communicate auth failure modes
     """
+
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
@@ -81,3 +81,7 @@ def verify_decode_jwt(token):
         'code': 'invalid_header',
         'description': 'Unable to find the appropriate key.'
     }, 400)
+
+
+if __name__ == '__main__':
+    verify_decode_jwt(token)

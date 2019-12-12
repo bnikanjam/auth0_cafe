@@ -11,6 +11,11 @@ app = Flask(__name__)
 setup_db(app)
 CORS(app)
 
+
+
+
+
+
 '''
 @TODO uncomment the following line to initialize the datbase
 !! NOTE THIS WILL DROP ALL RECORDS AND START YOUR DB FROM SCRATCH
